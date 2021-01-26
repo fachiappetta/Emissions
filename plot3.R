@@ -28,7 +28,7 @@ g = ggplot(data=baltimore_by_type,
            aes(x = year, y = Emissions, color = type))
 g = g + geom_line() +  
       xlab("year") +
-      ylab(expression('Total PM'[2.5]*" Emissions")) +
+      ylab(expression('Total PM'[2.5]*" Emissions in Tons")) +
       ggtitle('Total Emissions in Baltimore City, Maryland from 1999 to 2008 by type') +
       theme(axis.title.x=element_text(vjust=-2)) +
       theme(axis.title.y=element_text(angle=90, vjust=-0.5)) +

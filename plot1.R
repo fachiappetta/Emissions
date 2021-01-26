@@ -21,15 +21,18 @@ png(file ="plot1.png")
 par(mar = c(6,7,5,4))
 
 #plot total emissions per year
-barplot(height=total$Emissions/1000, 
+plot <- barplot(height=total$Emissions/1000, 
         names = total$year, 
         xlab = "Years", 
         ylab = expression("Total PM" [2.5]* " Emissions in Kilotons"),
-        ylim = c(0,1000),
+        ylim = c(0,8000),
         main = expression("Total PM" [2.5]* " Emissions in the US"),
-        col = rev(brewer.pal(4,"Blues")), #reverse the color order of the Reds Sequential color palette
-        text(x = total$year, y = round(total$Emissions/1000,2), label = round(total$Emissions/1000,2), pos = 3, cex = 0.8, col = "black")
+        col = rev(brewer.pal(6,"Blues")), #reverse the color order of the Reds Sequential color palette
+        border = NA
 )
+
+#add text on top of bars
+text(x = plot, y = round(total$Emissions/1000,2), label = round(total$Emissions/1000,2), pos = 3, cex = 0.8, col = "black")
 
 #close graphing device
 dev.off()
